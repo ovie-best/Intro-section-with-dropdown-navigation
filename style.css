@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    background-color: var(--Almost-White);
+    font-family: 'Epilogue', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+.body-content-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/*============ Elements with a display of flex ==============*/
+
+.left-wrapper, header, nav ul, .action, main, .logos, .left {
+    display: flex;
+}
+
+
+
+/*/////////////////////////////  HEADER & DROPDOWN MENU  /////////////////////////////////////////*/
+
+/*============ HEADER ==============*/
+
+header {
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 40px;
+    width: 100%;
+}
+
+nav ul, .action {
+    list-style-type: none;
+    align-items: center;
+    gap: 38px;
+}
+
+.action a + a {
+    padding: 10px 21px;
+    border: 2px solid var(--Medium-Gray);
+}
+
+a {
+    text-decoration: none;
+    color: var(--Medium-Gray);
+}
+
+
+.action a + a:hover {
+    border-color: var(--Almost-Black);
+    transition: 0.3s ease;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+
+/*============ DROPDOWN MENU ==============*/
+
+.dropdown {
+    display: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+.features,
+.company,
+.careers,
+.about {
+    padding-bottom: 25px;
+}
+
+nav ul li:first-of-type:hover ul.dropdown,
+nav ul li:nth-of-type(2):hover ul.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    background-color: #fff;
+    padding: 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    right: 0;
+    margin-top: 25px;
+    box-shadow: 0px 0px 30px  hsla(0, 0%, 41%, 0.32);
+}
+
+.dropdown li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.d1 li:nth-of-type(3) {
+    margin-left: 15px;
+}
+
+.d2 {
+    justify-content: start;
+    align-items: start;
+    /* width: 115px; */
+    left: 0;
+}
+
+
+img[src="./images/icon-arrow-up.svg"] {
+    display: none;
+}
+
+nav ul li:first-of-type:hover img[src="./images/icon-arrow-up.svg"],
+nav ul li:nth-of-type(2):hover img[src="./images/icon-arrow-up.svg"] {
+    display: inline;
+}
+
+nav ul li:first-of-type:hover img[src="./images/icon-arrow-down.svg"],
+nav ul li:nth-of-type(2):hover img[src="./images/icon-arrow-down.svg"] {
+    display: none;
+}
+
+/*===========================================*/
+/*//////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*/////////////////////////////  HERO/MAIN SECTION  /////////////////////////////////////////*/
+
+.left-wrapper {
+    gap: 60px;
+}
+
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    gap: 154px;
+    padding: 35px 0 50px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    width: 100%;
+}
+
+img[src="./images/image-hero-mobile.png"] {
+    display: none;
+}
+
+.left {
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    align-self: flex-end;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 7rem;
+}
+
+p {
+    margin-top: 10px;
+    color: var(--Medium-Gray);
+    padding-right: 20%;
+    line-height: 2.8rem;
+}
+
+button {
+    background-color: var(--Almost-Black);
+    font-size: inherit;
+    color: var(--Almost-White);
+    cursor: pointer;
+    width: 164px;
+    height: 58px;
+    margin-top: 5px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+.logos {
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+
+
+button, .action a + a {
+    border-radius: 15px;
+}
+
+a:hover, button:hover {
+    color: var(--Almost-Black);
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*/////////////////////////////  MEDIA QUERIES  /////////////////////////////////////////*/
+@media screen and (max-width: 1409px) {
+    p {
+        padding-right: 13%;
+    }
+}
+@media screen and (max-width: 1341px) {
+    p {
+        padding-right: 10%;
+    }
+
+    h1 {
+        font-size: 6.5rem;
+    }
+
+    main {
+        gap: 100px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .logos, button, p {
+        margin-top: 0;
+    }
+
+    .right img {
+        width: 120%;
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    main {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    /* /////////////////////////  HERO SECTION ON MOBILE ///////////////////////////////*/
+    main {
+        width: 80%;
+        flex-direction: column-reverse;
+    }
+
+    img[src="./images/image-hero-mobile.png"] {
+        display: block;
+        width: 100%;
+    }
+
+    img[src="./images/image-hero-desktop.png"], nav, .action {
+        display: none;
+    }
+
+    .left {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    p {
+        padding-right: 0;
+    }
+
+    .logos {
+        margin-top: 17px;
+        gap: 25px;
+    }
+
+    /*///////////////////// MOBILE HEADER & DROPDOWN ///////////////////////*/
+
+    header {
+        padding:  25px 15px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-header {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        background-color: hsla(0, 0%, 8%, .7);
+        top: 0;
+        left: 0;
+        transition: 0.4s;
+    }
+
+
+    div.mobile-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 65%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+     .mobile-nav {
+        display: flex;
+        margin-top: 60px;
+    }
+
+    .mobile-action {
+        display: flex;
+    }
+
+    .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        align-items: start;
+    } 
+
+    .mobile-nav ul .mobile-dropdown {
+        gap: 18px;
+    }
+
+    .mobile-dropdown {
+        padding-left: 22px;
+        padding-top: 30px;
+    }
+
+    .features, .company, .careers, .about {
+        padding-bottom: 0;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .mobile-action {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mobile-action a + a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    
+    .mbd1 li a, .mbd2 li a {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    ul.mobile-dropdown {
+        display: none;
+    } 
+
+    .mobile-nav ul li:first-of-type:hover ul.mobile-dropdown,
+    .mobile-nav ul li:nth-of-type(2):hover ul.mobile-dropdown {
+        display: flex;
+       
+    }
+
+    .features a img, .company a img {
+        margin-left: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3.6rem;
+        line-height: 4rem;
+    }
+
+    br {
+        display: none;
+    }
+
+    .left {
+        padding: 0 15px;
+    }
+
+    button {
+        height: 50px;
+    }
+
+    .logos img {
+        width: 20%;
+    }
+
+    .mobile-header {
+        font-size: 16px;
+    }
+
+    .close-icon img {
+        width: 20px;
+    }
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
